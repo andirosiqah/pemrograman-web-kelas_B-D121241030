@@ -13,10 +13,27 @@
 
     <main>
         <article class="media-card">
-            <h1 class="media-card__title">
-                Dasar-Dasar Pemrograman Web
-            </h1>
-        </article>
+
+    <picture class="media-card__picture">
+        <source
+            media="(min-width: 768px)"
+            srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&fm=webp">
+
+        <source
+            media="(max-width: 767px)"
+            srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=640&fm=webp">
+
+        <img
+            class="media-card__image"
+            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
+            alt="Mahasiswa belajar menggunakan laptop">
+    </picture>
+
+    <h1 class="media-card__title">
+        Dasar-Dasar Pemrograman Web
+    </h1>
+
+</article>
     </main>
 
 </body>
