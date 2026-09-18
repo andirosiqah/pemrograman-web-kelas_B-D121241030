@@ -5,3 +5,157 @@
     margin: 0;
     padding: 0;
 }
+
+body {
+    min-height: 100vh;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f4f6;
+    color: #1f2937;
+}
+
+.page {
+    width: 100%;
+    padding: 40px 20px;
+}
+
+.media-card {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+
+    background-color: #ffffff;
+
+    border-radius: 16px;
+    overflow: hidden;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease;
+}
+
+.media-card:hover {
+    transform: translateY(-6px);
+
+    box-shadow:
+        0 14px 35px rgba(0, 0, 0, 0.18);
+}
+.media-card__picture {
+    display: block;
+    width: 100%;
+}
+
+.media-card__image {
+    display: block;
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+}
+
+.media-card__body {
+    padding: 24px;
+}
+
+.media-card__category {
+    display: inline-block;
+
+    margin-bottom: 10px;
+    padding: 6px 12px;
+
+    font-size: 0.8rem;
+    font-weight: bold;
+
+    color: #1d4ed8;
+    background-color: #dbeafe;
+
+    border-radius: 20px;
+}
+
+.media-card__title {
+    margin-bottom: 20px;
+
+    font-size: 1.8rem;
+    line-height: 1.3;
+
+    color: #111827;
+}
+
+.media-card__video-wrapper {
+    width: 100%;
+    margin-bottom: 24px;
+}
+
+.media-card__video {
+    display: block;
+
+    width: 100%;
+
+    border-radius: 10px;
+}
+
+.media-card__audio-section {
+    margin-bottom: 24px;
+}
+
+.media-card__subtitle {
+    margin-bottom: 10px;
+
+    font-size: 1.1rem;
+
+    color: #374151;
+}
+
+.media-card__audio {
+    width: 100%;
+}
+
+.media-card__content {
+    padding-top: 4px;
+}
+
+.media-card__description {
+    font-size: 1rem;
+    line-height: 1.7;
+
+    color: #4b5563;
+
+    transition:
+        color 0.3s ease,
+        background-color 0.3s ease,
+        padding 0.3s ease;
+}
+
+.media-card.media-card--featured .media-card__description {
+    padding: 14px;
+
+    color: #1e3a8a;
+    background-color: #eff6ff;
+
+    border-left: 4px solid #2563eb;
+    border-radius: 6px;
+}
+
+@media (max-width: 600px) {
+
+    .page {
+        padding: 20px 12px;
+    }
+
+    .media-card__image {
+        height: 200px;
+    }
+
+    .media-card__body {
+        padding: 18px;
+    }
+
+    .media-card__title {
+        font-size: 1.4rem;
+    }
+
+    .media-card__description {
+        font-size: 0.95rem;
+    }
+
+}
