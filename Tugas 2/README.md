@@ -131,7 +131,7 @@
                         <li>Smart Campus</li>
                         <li>Sensor Networks</li>
                         <li>Embedded Systems</li>
-                        <li>Smart Enviroments</li>
+                        <li>Smart Environments</li>
                     </ul>
                 </li>
             </ol>
@@ -140,7 +140,17 @@
         <section>
             <h2>Metodologi Penelitian</h2>
 
-            <!-- Diagram penelitian akan ditambahkan di sini -->
+            <figure>
+                <img
+                    src="diagram-metodologi.png"
+                    alt="Diagram alur metodologi penelitian"
+                    width="600"
+                >
+
+                <figcaption>
+                    Gambar 1. Diagram alur metodologi penelitian dosen.
+                </figcaption>
+            </figure>
         </section>
 
         <section>
