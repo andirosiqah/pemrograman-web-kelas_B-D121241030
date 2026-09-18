@@ -32,7 +32,73 @@
         <section>
             <h2>Publikasi Ilmiah Dosen</h2>
 
-            <!-- Tabel publikasi akan ditambahkan di sini -->
+            <table>
+    <caption>Daftar Publikasi Ilmiah Dosen Teknik Informatika</caption>
+
+    <thead>
+        <tr>
+            <th scope="col" rowspan="2">No.</th>
+            <th scope="col" rowspan="2">Nama Dosen</th>
+            <th scope="col" colspan="3">Informasi Publikasi</th>
+            <th scope="col" rowspan="2">Bidang Penelitian</th>
+        </tr>
+
+        <tr>
+            <th scope="col">Judul Publikasi</th>
+            <th scope="col">Tahun</th>
+            <th scope="col">Jenis Publikasi</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <th scope="row" rowspan="2">1</th>
+            <td rowspan="2">Dr. Andi Ahmad, S.T., M.T.</td>
+            <td>Implementasi Machine Learning untuk Prediksi Data</td>
+            <td>2025</td>
+            <td>Jurnal Internasional</td>
+            <td rowspan="2">Artificial Intelligence</td>
+        </tr>
+
+        <tr>
+            <td>Analisis Deep Learning pada Data Citra Digital</td>
+            <td>2026</td>
+            <td>Prosiding Internasional</td>
+        </tr>
+
+        <tr>
+            <th scope="row" rowspan="2">2</th>
+            <td rowspan="2">Dr. Nurul Rahma, S.Kom., M.Kom.</td>
+            <td>Analisis Keamanan pada Aplikasi Berbasis Web</td>
+            <td>2024</td>
+            <td>Jurnal Nasional</td>
+            <td rowspan="2">Cyber Security</td>
+        </tr>
+
+        <tr>
+            <td>Sistem Deteksi Serangan Jaringan Menggunakan AI</td>
+            <td>2025</td>
+            <td>Prosiding Nasional</td>
+        </tr>
+
+        <tr>
+            <th scope="row">3</th>
+            <td>Dr. Muhammad Arif, S.T., M.T.</td>
+            <td>Penerapan Internet of Things pada Smart Campus</td>
+            <td>2026</td>
+            <td>Jurnal Internasional</td>
+            <td>Internet of Things</td>
+        </tr>
+    </tbody>
+
+    <tfoot>
+        <tr>
+            <td colspan="6">
+                Total publikasi yang ditampilkan: 5 publikasi
+            </td>
+        </tr>
+    </tfoot>
+</table>
         </section>
 
         <section>
