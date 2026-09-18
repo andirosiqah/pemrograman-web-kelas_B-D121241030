@@ -1,91 +1,113 @@
 <!DOCTYPE html>
 <html lang="id">
+
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
 
     <title>Pemutar Media Kuliah Responsif</title>
 
-    <link rel="stylesheet" href="03-tugas-style.css">
+    <link
+        rel="stylesheet"
+        href="03-tugas-style.css">
 </head>
 
 <body>
 
-    <main>
+    <main class="page">
+
         <article class="media-card media-card--featured">
 
-    <picture class="media-card__picture">
-        <source
-            media="(min-width: 768px)"
-            srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&fm=webp">
+            <picture class="media-card__picture">
 
-        <source
-            media="(max-width: 767px)"
-            srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=640&fm=webp">
+                <source
+                    media="(min-width: 768px)"
+                    srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200&fm=webp">
 
-        <img
-            class="media-card__image"
-            src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
-            alt="Mahasiswa belajar menggunakan laptop">
-    </picture>
+                <source
+                    media="(max-width: 767px)"
+                    srcset="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=640&fm=webp">
 
-    <h1 class="media-card__title">
-        Dasar-Dasar Pemrograman Web
-    </h1>
+                <img
+                    class="media-card__image"
+                    src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800"
+                    alt="Mahasiswa belajar menggunakan laptop">
 
-    <div class="media-card__video-wrapper">
+            </picture>
 
-    <video
-        class="media-card__video"
-        controls
-        preload="metadata"
-        poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1000&fm=webp">
+            <div class="media-card__body">
 
-        <source
-            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
-            type="video/webm">
+                <span class="media-card__category">
+                    Pemrograman Web
+                </span>
 
-        <source
-            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-            type="video/mp4">
+                <h1 class="media-card__title">
+                    Dasar-Dasar Pemrograman Web
+                </h1>
 
-        Browser Anda tidak mendukung pemutar video.
+                <div class="media-card__video-wrapper">
 
-    </video>
+                    <video
+                        class="media-card__video"
+                        controls
+                        preload="metadata"
+                        poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=1000&fm=webp">
 
-</div>
+                        <source
+                            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+                            type="video/webm">
 
-<div class="media-card__audio-section">
+                        <source
+                            src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+                            type="video/mp4">
 
-    <h2 class="media-card__subtitle">
-        Audio Materi
-    </h2>
+                        Browser Anda tidak mendukung pemutar video.
 
-    <audio class="media-card__audio" controls>
+                    </video>
 
-        <source
-            src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
-            type="audio/mpeg">
+                </div>
 
-        Browser Anda tidak mendukung pemutar audio.
+                <div class="media-card__audio-section">
 
-    </audio>
+                    <h2 class="media-card__subtitle">
+                        Audio Materi
+                    </h2>
 
-</div>
+                    <audio
+                        class="media-card__audio"
+                        controls>
 
-<div class="media-card__content">
+                        <source
+                            src="https://interactive-examples.mdn.mozilla.net/media/cc0-audio/t-rex-roar.mp3"
+                            type="audio/mpeg">
 
-    <p class="media-card__description">
-        Materi ini membahas dasar-dasar pemrograman web,
-        penggunaan elemen multimedia HTML5, gambar responsif,
-        serta penerapan CSS untuk menghasilkan antarmuka yang
-        nyaman digunakan pada berbagai ukuran layar.
-    </p>
+                        Browser Anda tidak mendukung pemutar audio.
 
-</div>
+                    </audio>
 
-</article>
+                </div>
+
+                <div class="media-card__content">
+
+                    <p class="media-card__description">
+                        Materi ini membahas dasar-dasar pemrograman
+                        web, penggunaan elemen multimedia HTML5,
+                        gambar responsif, serta penerapan CSS untuk
+                        menghasilkan antarmuka yang nyaman digunakan
+                        pada berbagai ukuran layar.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </article>
+
     </main>
 
 </body>
+
 </html>

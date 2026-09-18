@@ -39,7 +39,7 @@ body {
     transform: translateY(-6px);
 
     box-shadow:
-        0 14px 35px rgba(0, 0, 0, 0.18);
+        0 16px 40px rgba(0, 0, 0, 0.22);
 }
 .media-card__picture {
     display: block;
