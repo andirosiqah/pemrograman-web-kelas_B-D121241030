@@ -156,7 +156,20 @@
         <section>
             <h2>Deskripsi Riset</h2>
 
-            <!-- Deskripsi penelitian akan ditambahkan di sini -->
+            <p>
+                Penelitian di bidang Artificial Intelligence &amp; Machine Learning
+                terus berkembang untuk menyelesaikan berbagai permasalahan komputasi.
+                Salah satu penelitian menggunakan aturan bahwa nilai kesalahan
+                harus &lt; 10% agar model diangggap memiliki performa yang baik,
+                sedangkan tingkat akurasi diharapkan &gt; 90%
+            </p>
+
+            <p>
+                Salah satu prinsip penelitian yang digunakan adalah 
+                &quot;data yang berkualitas menghasilkan analisis yang berkualitas&quot;.
+                Seluruh publikasi merupakan bagian dari kegiatan penelitian 
+                Departemen Teknik Informatika &copy; 2026.
+            </p>
         </section>
 
     </main>
