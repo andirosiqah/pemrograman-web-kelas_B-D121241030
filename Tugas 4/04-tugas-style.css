@@ -202,3 +202,19 @@ a {
     margin-top: auto;
     align-self: flex-start;
 }
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer {
+    margin-top: 30px;
+    padding: 20px;
+    text-align: center;
+    background-color: #0b2265;
+    color: white;
+}
+
+.footer p {
+    margin: 0;
+}
