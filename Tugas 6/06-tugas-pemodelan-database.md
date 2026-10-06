@@ -74,3 +74,16 @@ Cardinality:
 | `tanggal_jatuh_tempo` | Batas waktu pengembalian buku |
 | `tanggal_kembali` | Tanggal buku dikembalikan |
 | `status` | Status transaksi peminjaman |
+
+## 4. Simulasi Normalisasi
+
+### 4.1 Bentuk Tidak Normal (UNF)
+
+Pada awalnya seluruh data mahasiswa dan buku yang dipinjam dapat disimpan dalam satu tabel besar seperti berikut:
+
+| NIM | Nama Mahasiswa | Email | Program Studi | Buku Dipinjam |
+|---|---|---|---|---|
+| D121241001 | Andi | andi@student.unhas.ac.id | Teknik Informatika | {B001, Basis Data, Informatika Press, 2026-10-01, 2026-10-08}, {B002, Pemrograman Web, Media Teknologi, 2026-10-01, 2026-10-08} |
+| D121241002 | Rina | rina@student.unhas.ac.id | Teknik Informatika | {B001, Basis Data, Informatika Press, 2026-10-02, 2026-10-09} |
+
+Bentuk tersebut termasuk UNF karena kolom `Buku Dipinjam` menyimpan lebih dari satu kelompok nilai dalam satu sel. Data tersebut belum atomik dan memiliki kelompok data berulang.
