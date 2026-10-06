@@ -87,3 +87,25 @@ Pada awalnya seluruh data mahasiswa dan buku yang dipinjam dapat disimpan dalam 
 | D121241002 | Rina | rina@student.unhas.ac.id | Teknik Informatika | {B001, Basis Data, Informatika Press, 2026-10-02, 2026-10-09} |
 
 Bentuk tersebut termasuk UNF karena kolom `Buku Dipinjam` menyimpan lebih dari satu kelompok nilai dalam satu sel. Data tersebut belum atomik dan memiliki kelompok data berulang.
+
+### 4.2 First Normal Form (1NF)
+
+Agar memenuhi 1NF, setiap sel harus menyimpan satu nilai atomik dan kelompok data berulang harus dihilangkan.
+
+Hasil perubahan menjadi:
+
+| NIM | Buku ID | Tanggal Pinjam | Nama Mahasiswa | Email | Program Studi | ISBN | Judul | Penerbit ID | Nama Penerbit | Alamat Penerbit | Tahun Terbit | Tanggal Jatuh Tempo | Tanggal Kembali | Status |
+|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
+| D121241001 | B001 | 2026-10-01 | Andi | andi@student.unhas.ac.id | Teknik Informatika | 978001 | Basis Data | P001 | Informatika Press | Makassar | 2025 | 2026-10-08 | NULL | Dipinjam |
+| D121241001 | B002 | 2026-10-01 | Andi | andi@student.unhas.ac.id | Teknik Informatika | 978002 | Pemrograman Web | P002 | Media Teknologi | Jakarta | 2026 | 2026-10-08 | NULL | Dipinjam |
+| D121241002 | B001 | 2026-10-02 | Rina | rina@student.unhas.ac.id | Teknik Informatika | 978001 | Basis Data | P001 | Informatika Press | Makassar | 2025 | 2026-10-09 | NULL | Dipinjam |
+
+Pada tahap ini setiap kolom sudah memiliki nilai atomik sehingga tabel telah memenuhi 1NF.
+
+Kunci dapat dipandang sebagai kombinasi:
+
+`nim + buku_id + tanggal_pinjam`
+
+Kombinasi tersebut diperlukan karena mahasiswa yang sama dapat meminjam buku yang sama lagi pada waktu yang berbeda.
+
+Walaupun sudah memenuhi 1NF, masih terdapat redundansi. Contohnya, nama dan email mahasiswa ditulis berulang setiap kali mahasiswa melakukan peminjaman. Data buku dan penerbit juga berulang pada setiap transaksi.
