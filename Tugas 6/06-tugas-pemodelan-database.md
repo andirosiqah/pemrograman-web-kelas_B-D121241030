@@ -161,3 +161,47 @@ Namun masih terdapat ketergantungan transitif pada tabel `buku`, yaitu:
 `buku_id → penerbit_id → nama_penerbit, alamat_penerbit`
 
 Oleh karena itu struktur masih perlu dinormalisasi ke 3NF.
+
+### 4.4 Third Normal Form (3NF)
+
+Agar memenuhi 3NF, ketergantungan transitif harus dihilangkan.
+
+Pada tabel `buku` terdapat ketergantungan:
+
+`buku_id → penerbit_id → nama_penerbit, alamat_penerbit`
+
+`nama_penerbit` dan `alamat_penerbit` sebenarnya bergantung pada `penerbit_id`, bukan secara langsung pada `buku_id`.
+
+Oleh karena itu data penerbit dipisahkan menjadi tabel tersendiri.
+
+Struktur setelah 3NF:
+
+1. `mahasiswa`
+   - `nim` (PK)
+   - `nama_mahasiswa`
+   - `email`
+   - `program_studi`
+
+2. `penerbit`
+   - `penerbit_id` (PK)
+   - `nama_penerbit`
+   - `alamat_penerbit`
+
+3. `buku`
+   - `buku_id` (PK)
+   - `isbn`
+   - `judul`
+   - `tahun_terbit`
+   - `stok`
+   - `penerbit_id` (FK)
+
+4. `transaksi_peminjaman`
+   - `peminjaman_id` (PK)
+   - `nim` (FK)
+   - `buku_id` (FK)
+   - `tanggal_pinjam`
+   - `tanggal_jatuh_tempo`
+   - `tanggal_kembali`
+   - `status`
+
+Dengan struktur tersebut, setiap atribut bukan kunci bergantung pada Primary Key tabelnya masing-masing dan tidak terdapat ketergantungan transitif yang tidak diperlukan. Skema telah memenuhi 3NF.
