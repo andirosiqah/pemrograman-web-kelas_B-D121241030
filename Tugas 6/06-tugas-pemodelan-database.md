@@ -205,3 +205,54 @@ Struktur setelah 3NF:
    - `status`
 
 Dengan struktur tersebut, setiap atribut bukan kunci bergantung pada Primary Key tabelnya masing-masing dan tidak terdapat ketergantungan transitif yang tidak diperlukan. Skema telah memenuhi 3NF.
+
+## 5. Rancangan Tabel Akhir
+
+### 5.1 Tabel `mahasiswa`
+
+| Kolom | Tipe Data | Constraint | Keterangan |
+|---|---|---|---|
+| `nim` | VARCHAR(20) | PRIMARY KEY | Identitas unik mahasiswa |
+| `nama_mahasiswa` | VARCHAR(100) | NOT NULL | Nama mahasiswa |
+| `email` | VARCHAR(100) | NOT NULL, UNIQUE | Email mahasiswa |
+| `program_studi` | VARCHAR(100) | NOT NULL | Program studi |
+
+### 5.2 Tabel `penerbit`
+
+| Kolom | Tipe Data | Constraint | Keterangan |
+|---|---|---|---|
+| `penerbit_id` | INT UNSIGNED | PRIMARY KEY, AUTO_INCREMENT | Identitas unik penerbit |
+| `nama_penerbit` | VARCHAR(100) | NOT NULL | Nama penerbit |
+| `alamat_penerbit` | VARCHAR(255) | NULL | Alamat penerbit |
+
+### 5.3 Tabel `buku`
+
+| Kolom | Tipe Data | Constraint | Keterangan |
+|---|---|---|---|
+| `buku_id` | INT UNSIGNED | PRIMARY KEY, AUTO_INCREMENT | Identitas unik buku |
+| `isbn` | VARCHAR(20) | NOT NULL, UNIQUE | ISBN buku |
+| `judul` | VARCHAR(255) | NOT NULL | Judul buku |
+| `tahun_terbit` | SMALLINT UNSIGNED | NOT NULL | Tahun terbit |
+| `stok` | INT UNSIGNED | NOT NULL | Jumlah stok buku |
+| `penerbit_id` | INT UNSIGNED | FOREIGN KEY, NOT NULL | Merujuk ke penerbit |
+
+Foreign Key:
+
+`penerbit_id` → `penerbit(penerbit_id)`
+
+### 5.4 Tabel `transaksi_peminjaman`
+
+| Kolom | Tipe Data | Constraint | Keterangan |
+|---|---|---|---|
+| `peminjaman_id` | INT UNSIGNED | PRIMARY KEY, AUTO_INCREMENT | Identitas unik transaksi |
+| `nim` | VARCHAR(20) | FOREIGN KEY, NOT NULL | Mahasiswa peminjam |
+| `buku_id` | INT UNSIGNED | FOREIGN KEY, NOT NULL | Buku yang dipinjam |
+| `tanggal_pinjam` | DATE | NOT NULL | Tanggal peminjaman |
+| `tanggal_jatuh_tempo` | DATE | NOT NULL | Batas pengembalian |
+| `tanggal_kembali` | DATE | NULL | Tanggal pengembalian |
+| `status` | VARCHAR(20) | NOT NULL | Status peminjaman |
+
+Foreign Key:
+
+- `nim` → `mahasiswa(nim)`
+- `buku_id` → `buku(buku_id)`
