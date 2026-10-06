@@ -263,7 +263,7 @@ Foreign Key:
 erDiagram
     MAHASISWA ||--o{ TRANSAKSI_PEMINJAMAN : melakukan
     BUKU ||--o{ TRANSAKSI_PEMINJAMAN : dipinjam_dalam
-    PENERBIT ||--o{ BUKU : menerbitka
+    PENERBIT ||--o{ BUKU : menerbitkan
 
     MAHASISWA {
         varchar nim PK
