@@ -33,3 +33,44 @@ Cardinality:
 - `buku` 1 : N `transaksi_peminjaman`
 - `penerbit` 1 : N `buku`
 
+## 3. Identifikasi Entitas dan Atribut
+
+### 3.1 Entitas Mahasiswa
+
+| Atribut | Keterangan |
+|---|---|
+| `nim` | Primary Key, identitas unik mahasiswa |
+| `nama_mahasiswa` | Nama lengkap mahasiswa |
+| `email` | Email mahasiswa |
+| `program_studi` | Program studi mahasiswa |
+
+### 3.2 Entitas Penerbit
+
+| Atribut | Keterangan |
+|---|---|
+| `penerbit_id` | Primary Key, identitas unik penerbit |
+| `nama_penerbit` | Nama penerbit |
+| `alamat_penerbit` | Alamat penerbit |
+
+### 3.3 Entitas Buku
+
+| Atribut | Keterangan |
+|---|---|
+| `buku_id` | Primary Key, identitas unik buku |
+| `isbn` | Nomor ISBN buku |
+| `judul` | Judul buku |
+| `tahun_terbit` | Tahun penerbitan buku |
+| `stok` | Jumlah buku yang tersedia |
+| `penerbit_id` | Foreign Key yang merujuk ke `penerbit.penerbit_id` |
+
+### 3.4 Entitas Transaksi Peminjaman
+
+| Atribut | Keterangan |
+|---|---|
+| `peminjaman_id` | Primary Key, identitas unik transaksi |
+| `nim` | Foreign Key yang merujuk ke `mahasiswa.nim` |
+| `buku_id` | Foreign Key yang merujuk ke `buku.buku_id` |
+| `tanggal_pinjam` | Tanggal buku dipinjam |
+| `tanggal_jatuh_tempo` | Batas waktu pengembalian buku |
+| `tanggal_kembali` | Tanggal buku dikembalikan |
+| `status` | Status transaksi peminjaman |
