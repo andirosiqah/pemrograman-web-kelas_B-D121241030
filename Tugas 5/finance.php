@@ -67,3 +67,76 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 ?>
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistem Manajemen Keuangan</title>
+</head>
+
+<body>
+    <h1>Sistem Manajemen Keuangan Sederhana</h1>
+
+    <h2>
+        Saldo:
+        Rp<?= htmlspecialchars(number_format($_SESSION['balance'], 2, ',', '.')) ?>
+    </h2>
+
+    <?php if ($message !== ''): ?>
+        <p>
+            <?= htmlspecialchars($message, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+    <?php endif; ?>
+
+    <?php if ($error !== ''): ?>
+        <p>
+            <?= htmlspecialchars($error, ENT_QUOTES, 'UTF-8') ?>
+        </p>
+    <?php endif; ?>
+
+    <h2>Transaksi Baru</h2>
+
+    <form action="" method="POST">
+        <input
+            type="hidden"
+            name="csrf_token"
+            value="<?= htmlspecialchars(
+                $_SESSION['csrf_token'],
+                ENT_QUOTES,
+                'UTF-8'
+            ) ?>"
+        >
+
+        <div>
+            <label for="type">Jenis Transaksi</label>
+            <select name="type" id="type" required>
+                <option value="">-- Pilih transaksi --</option>
+                <option value="deposit">Deposit</option>
+                <option value="withdraw">Penarikan</option>
+            </select>
+        </div>
+
+        <br>
+
+        <div>
+            <label for="amount">Jumlah</label>
+            <input
+                type="number"
+                name="amount"
+                id="amount"
+                min="0.01"
+                step="0.01"
+                required
+            >
+        </div>
+
+        <br>
+
+        <button type="submit">
+            Proses Transaksi
+        </button>
+    </form>
+</body>
+</html>
