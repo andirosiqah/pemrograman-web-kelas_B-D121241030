@@ -256,3 +256,44 @@ Foreign Key:
 
 - `nim` → `mahasiswa(nim)`
 - `buku_id` → `buku(buku_id)`
+
+## 6. Visualisasi Relasi Kunci
+
+```mermaid
+erDiagram
+    MAHASISWA ||--o{ TRANSAKSI_PEMINJAMAN : melakukan
+    BUKU ||--o{ TRANSAKSI_PEMINJAMAN : dipinjam_dalam
+    PENERBIT ||--o{ BUKU : menerbitka
+
+    MAHASISWA {
+        varchar nim PK
+        varchar nama_mahasiswa
+        varchar email
+        varchar program_studi
+    }
+
+    PENERBIT {
+        int penerbit_id PK
+        varchar nama_penerbit
+        varchar alamat_penerbit
+    }
+
+    BUKU {
+        int buku_id PK
+        varchar isbn
+        varchar judul
+        smallint tahun_terbit
+        int stok
+        int penerbit_id FK
+    }
+
+    TRANSAKSI_PEMINJAMAN {
+        int peminjaman_id PK
+        varchar nim FK
+        int buku_id FK
+        date tanggal_pinjam
+        date tanggal_jatuh_tempo
+        date tanggal_kembali
+        varchar status
+    }
+```
