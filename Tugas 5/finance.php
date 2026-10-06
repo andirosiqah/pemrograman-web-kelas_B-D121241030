@@ -51,7 +51,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         );
 
         if ($transaction->process()) {
-            $_SESSION['transaction'][] = [
+            $_SESSION['transactions'][] = [
                 'id' => $transaction->getId(),
                 'type' => $transaction->getType(),
                 'amount' => $transaction->getAmount(),
