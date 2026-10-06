@@ -109,3 +109,55 @@ Kunci dapat dipandang sebagai kombinasi:
 Kombinasi tersebut diperlukan karena mahasiswa yang sama dapat meminjam buku yang sama lagi pada waktu yang berbeda.
 
 Walaupun sudah memenuhi 1NF, masih terdapat redundansi. Contohnya, nama dan email mahasiswa ditulis berulang setiap kali mahasiswa melakukan peminjaman. Data buku dan penerbit juga berulang pada setiap transaksi.
+
+### 4.3 Second Normal Form (2NF)
+
+Untuk memenuhi 2NF, ketergantungan parsial terhadap sebagian kunci komposit harus dihilangkan.
+
+Ketergantungan yang ditemukan:
+
+- `nim` menentukan `nama_mahasiswa`, `email`, dan `program_studi`.
+- `buku_id` menentukan `isbn`, `judul`, `tahun_terbit`, serta informasi penerbit.
+- Data transaksi bergantung pada kejadian peminjaman buku oleh mahasiswa.
+
+Oleh karena itu tabel dipisahkan menjadi:
+
+#### Tabel mahasiswa
+
+| nim | nama_mahasiswa | email | program_studi |
+|---|---|---|---|
+| D121241001 | Andi | andi@student.unhas.ac.id | Teknik Informatika |
+| D121241002 | Rina | rina@student.unhas.ac.id | Teknik Informatika |
+
+Primary Key: `nim`
+
+#### Tabel buku
+
+| buku_id | isbn | judul | tahun_terbit | penerbit_id | nama_penerbit | alamat_penerbit |
+|---|---|---|---|---|---|---|
+| B001 | 978001 | Basis Data | 2025 | P001 | Informatika Press | Makassar |
+| B002 | 978002 | Pemrograman Web | 2026 | P002 | Media Teknologi | Jakarta |
+
+Primary Key: `buku_id`
+
+#### Tabel transaksi_peminjaman
+
+| peminjaman_id | nim | buku_id | tanggal_pinjam | tanggal_jatuh_tempo | tanggal_kembali | status |
+|---|---|---|---|---|---|---|
+| T001 | D121241001 | B001 | 2026-10-01 | 2026-10-08 | NULL | Dipinjam |
+| T002 | D121241001 | B002 | 2026-10-01 | 2026-10-08 | NULL | Dipinjam |
+| T003 | D121241002 | B001 | 2026-10-02 | 2026-10-09 | NULL | Dipinjam |
+
+Primary Key: `peminjaman_id`
+
+Foreign Key:
+- `nim` merujuk ke `mahasiswa.nim`
+- `buku_id` merujuk ke `buku.buku_id`
+
+Pada tahap 2NF, informasi mahasiswa tidak lagi berulang pada setiap transaksi.
+
+Namun masih terdapat ketergantungan transitif pada tabel `buku`, yaitu:
+
+`buku_id → penerbit_id → nama_penerbit, alamat_penerbit`
+
+Oleh karena itu struktur masih perlu dinormalisasi ke 3NF.
